@@ -1,0 +1,12 @@
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\bin\Debug\Estacionamiento V2.0.exe.config
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\bin\Debug\Estacionamiento V2.0.exe
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\bin\Debug\Estacionamiento V2.0.pdb
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento V2.0.csproj.AssemblyReference.cache
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento_V2._0.Properties.Resources.resources
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento V2.0.csproj.GenerateResource.cache
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento V2.0.csproj.CoreCompileInputs.cache
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento V2.0.exe
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento V2.0.pdb
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento_V2._0.Form1.resources
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento_V2._0.Form2.resources
+C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacionamiento_V2._0.Form3.resources
