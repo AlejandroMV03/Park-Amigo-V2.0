@@ -41,7 +41,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox2.BackColor = System.Drawing.Color.Gold;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(413, 50);
@@ -51,7 +51,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.BackColor = System.Drawing.Color.Gold;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(116, 9);
             this.label3.Name = "label3";
@@ -62,6 +62,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(187, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
@@ -71,6 +73,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(178, 201);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
@@ -116,6 +119,7 @@
             // 
             // Form1
             // 
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(412, 439);
             this.Controls.Add(this.linkLabel1);
@@ -127,6 +131,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Park Amigo";
