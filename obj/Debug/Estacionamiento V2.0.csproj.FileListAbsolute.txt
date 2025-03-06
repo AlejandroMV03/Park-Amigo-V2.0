@@ -37,3 +37,67 @@ C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\aa-ER\Estacionamien
 C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\obj\Debug\Estacion.9479B9EA.Up2Date
 C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\bin\Debug\System.IO.Pipelines.dll
 C:\Users\Cristian Mex\Desktop\Estacionamiento V2.0\bin\Debug\System.IO.Pipelines.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Estacionamiento V2.0.exe.config
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Estacionamiento V2.0.exe
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Estacionamiento V2.0.pdb
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\aa-ER\Estacionamiento V2.0.resources.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\RestSharp.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Buffers.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.IO.Pipelines.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Memory.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Text.Json.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.ValueTuple.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\RestSharp.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Buffers.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.IO.Pipelines.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Memory.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Text.Json.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.ValueTuple.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento V2.0.csproj.AssemblyReference.cache
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Form1.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Form2.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Form3.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Form4.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Properties.Resources.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Form4.aa-ER.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento V2.0.csproj.GenerateResource.cache
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento V2.0.csproj.CoreCompileInputs.cache
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\aa-ER\Estacionamiento V2.0.resources.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacion.9479B9EA.Up2Date
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento V2.0.exe
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento V2.0.pdb
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\obj\Debug\Estacionamiento_V2._0.Form5.resources
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Google.Protobuf.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\MySql.Data.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\MySqlConnector.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\ZstdSharp.dll
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Google.Protobuf.pdb
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Google.Protobuf.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\MySql.Data.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\MySqlConnector.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\aldai\source\repos\Park-Amigo-V2.0\visualstudioPARKAMIGO\bin\Debug\System.Diagnostics.DiagnosticSource.xml

@@ -104,5 +104,27 @@ namespace Estacionamiento_V2._0
             form2.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+
+            // Mostrar Formulario3
+            form3.Show();
+
+            // Ocultar Formulario1 (opcional)
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+
+            // Mostrar Formulario3
+            form5.Show();
+
+            // Ocultar Formulario1 (opcional)
+            this.Hide();
+        }
     }
-}
+    }
