@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -24,6 +25,10 @@ namespace Estacionamiento_V2._0
         public Form3()
         {
             InitializeComponent();
+            textBoxCodigo.Visible = false;
+            labelCodigo.Visible = false;
+            textBoxTelefono.Visible = false;
+            lbltelefono.Visible = false;
 
         }
         private void InicializarComponentes()
@@ -189,6 +194,13 @@ namespace Estacionamiento_V2._0
             labelCodigo.Visible = true;
             textBoxCodigo.Visible = true;
             btnValidarSolicitud.Visible = true;
+            textBoxTelefono.Visible = true;
+            lbltelefono.Visible = true;
+            labelFechaHora.Visible = false;
+            dateTimePickerReserva.Visible = false;
+            labelLugar.Visible = false;
+            comboBoxLugar.Visible = false;
+            btnEnviarCodigo.Visible = false;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -210,33 +222,28 @@ namespace Estacionamiento_V2._0
 
         private void btnEnviarCodigo_Click(object sender, EventArgs e)
         {
-            if (comboBoxLugar.SelectedItem == null)
-            {
-                MessageBox.Show("Selecciona un lugar de estacionamiento antes de confirmar.");
-                return;
-            }
-
             fechaReserva = dateTimePickerReserva.Value.ToString("yyyy-MM-dd");
             horaReserva = dateTimePickerReserva.Value.ToString("HH:mm");
-            lugarReserva = comboBoxLugar.SelectedItem.ToString();
+            lugarReserva = comboBoxLugar.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(lugarReserva))
+            {
+                MessageBox.Show("Por favor, selecciona un lugar de estacionamiento.");
+                return;
+            }
 
             MessageBox.Show($"Reserva guardada:\nFecha: {fechaReserva}\nHora: {horaReserva}\nLugar: {lugarReserva}");
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
-
         {
-            textBoxTelefono.Visible = false;
-            lbltelefono.Visible = false;
             if (string.IsNullOrEmpty(fechaReserva) || string.IsNullOrEmpty(horaReserva) || string.IsNullOrEmpty(lugarReserva))
             {
-                MessageBox.Show("Debes confirmar tu reserva antes de continuar.");
+                MessageBox.Show("Debes tener antes una reserva ya ralizada.");
                 return;
             }
 
             string usuario = label1.Text.Replace("Bienvenido: ", "").Trim();
-
-          
             Form4 form4 = new Form4(usuario, fechaReserva, horaReserva, lugarReserva);
             form4.Show();
         }
@@ -262,7 +269,41 @@ namespace Estacionamiento_V2._0
                 timer1.Stop();
             }
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            textBoxCodigo.Visible = false;
+            labelCodigo.Visible = false;
+            textBoxTelefono.Visible = false;
+            lbltelefono.Visible = false;
+            dateTimePickerReserva.Visible = false;
+            comboBoxLugar.Visible = false;
+            btnEnviarCodigo.Visible = false;
+            labelFechaHora.Visible = false;
+            labelLugar.Visible = false;
+            
+
+        }
+
+        private void Form3_Load_1(object sender, EventArgs e)
+        {
+            textBoxCodigo.Visible = false;
+            labelCodigo.Visible = false;
+            textBoxTelefono.Visible = false;
+            lbltelefono.Visible = false;
+            dateTimePickerReserva.Visible = false;
+            comboBoxLugar.Visible = false;
+            btnEnviarCodigo.Visible = false;
+            labelFechaHora.Visible = false;
+            labelLugar.Visible = false;
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();  // Muestra Form1
+            this.Close();
+        }
     }
 
 }
- 

@@ -19,6 +19,8 @@ namespace Estacionamiento_V2._0
         public Form1()
         {
             InitializeComponent();
+            button2.Visible = false;
+            button3.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -48,12 +50,35 @@ namespace Estacionamiento_V2._0
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 cn.Open();
+                // Primero verificamos si es un administrador
+                string adminQuery = "SELECT COUNT(*) FROM Administrador WHERE NombreDeAdministrador = @Nombre AND Contraseña = @Contra";
+                using (SqlCommand adminCmd = new SqlCommand(adminQuery, cn))
+                {
+                    adminCmd.Parameters.AddWithValue("@Nombre", usua);
+                    adminCmd.Parameters.AddWithValue("@Contra", contra);
+
+                    int adminCount = (int)adminCmd.ExecuteScalar();
+                    if (adminCount > 0)
+                    {
+                        // Si el administrador existe, redirigimos a Form5
+                        MessageBox.Show("Inicio de sesión de administrador exitoso.");
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        textBox1.Focus();
+
+                        Form5 form5 = new Form5();
+                        form5.Show();
+                        this.Hide();
+                        return;
+                    }
+                }
+
+                // Si no es un administrador, verificamos si es un usuario regular
                 string query = "SELECT COUNT(*) FROM [Registro-usuario] WHERE Nombre_de_usuario = @Nombre AND Contraseña = @Contra";
                 using (SqlCommand cmd = new SqlCommand(query, cn))
                 {
                     cmd.Parameters.AddWithValue("@Nombre", usua);
                     cmd.Parameters.AddWithValue("@Contra", contra);
-
 
                     int count = (int)cmd.ExecuteScalar();
                     if (count > 0)
@@ -66,36 +91,28 @@ namespace Estacionamiento_V2._0
                         Form3 form3 = new Form3(usua);
                         form3.Show();
                         this.Hide();
-
-                        return;
-
-                        
                     }
                     else
                     {
-
-                    }
-
-                    string userExistsQuery = "SELECT COUNT(*) FROM [Registro-usuario] WHERE Nombre_de_usuario = @Nombre";
-                    using (SqlCommand userCmd = new SqlCommand(userExistsQuery, cn))
-                    {
-                        userCmd.Parameters.AddWithValue("@Nombre", usua);
-                        int userExists = (int)userCmd.ExecuteScalar();
-
-                        if (userExists > 0)
+                        // Si el usuario no existe o la contraseña es incorrecta
+                        string userExistsQuery = "SELECT COUNT(*) FROM [Registro-usuario] WHERE Nombre_de_usuario = @Nombre";
+                        using (SqlCommand userCmd = new SqlCommand(userExistsQuery, cn))
                         {
-                            MessageBox.Show("Contraseña incorrecta.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuario no registrado.");
+                            userCmd.Parameters.AddWithValue("@Nombre", usua);
+                            int userExists = (int)userCmd.ExecuteScalar();
+
+                            if (userExists > 0)
+                            {
+                                MessageBox.Show("Contraseña incorrecta.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario no registrado.");
+                            }
                         }
                     }
-
                 }
-
             }
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -107,6 +124,7 @@ namespace Estacionamiento_V2._0
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             Form3 form3 = new Form3();
 
             // Mostrar Formulario3

@@ -57,7 +57,7 @@
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(116, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 38);
+            this.label3.Size = new System.Drawing.Size(167, 31);
             this.label3.TabIndex = 1;
             this.label3.Text = "Park Amigo";
             // 
@@ -68,7 +68,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(187, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Usuario:";
             // 
@@ -78,7 +78,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(178, 201);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 17);
+            this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Contraseña:";
             // 
@@ -86,14 +86,15 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(144, 162);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 23);
+            this.textBox1.Size = new System.Drawing.Size(139, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(144, 230);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 23);
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.Size = new System.Drawing.Size(139, 20);
             this.textBox2.TabIndex = 5;
             // 
             // button1
@@ -113,7 +114,7 @@
             this.linkLabel1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel1.Location = new System.Drawing.Point(132, 303);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(197, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(151, 13);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Crear Cuenta/ Create Account";
@@ -132,7 +133,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(158, 385);
+            this.button3.Location = new System.Drawing.Point(144, 345);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 23);
             this.button3.TabIndex = 9;

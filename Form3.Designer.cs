@@ -43,8 +43,6 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.labelEdad = new System.Windows.Forms.Label();
             this.textBoxEdad = new System.Windows.Forms.TextBox();
@@ -68,10 +66,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gold;
-            this.pictureBox1.Location = new System.Drawing.Point(259, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(194, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(560, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(420, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -80,20 +77,18 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Gold;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(373, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(280, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 25);
+            this.label1.Size = new System.Drawing.Size(63, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 121);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(17, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 3;
             // 
             // toolStrip1
@@ -112,16 +107,13 @@
             this.toolStripButton3,
             this.toolStripSeparator5,
             this.toolStripSeparator6,
-            this.toolStripSeparator7,
-            this.toolStripSeparator8,
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStrip1.Size = new System.Drawing.Size(204, 554);
+            this.toolStrip1.Size = new System.Drawing.Size(167, 450);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -129,121 +121,107 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(201, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(164, 24);
             this.toolStripButton1.Text = "Solicitar Tarjeta";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(201, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(164, 24);
             this.toolStripButton2.Text = "Reservar Estacionamiento";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripButton3
             // 
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(201, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(164, 24);
             this.toolStripButton3.Text = "Confirmar Reserva";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(201, 6);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(201, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripButton5
             // 
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(201, 24);
+            this.toolStripButton5.Size = new System.Drawing.Size(164, 24);
             this.toolStripButton5.Text = "Cerrar Sesión";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // labelEdad
             // 
             this.labelEdad.AutoSize = true;
             this.labelEdad.BackColor = System.Drawing.Color.Transparent;
             this.labelEdad.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelEdad.Location = new System.Drawing.Point(251, 119);
-            this.labelEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEdad.Location = new System.Drawing.Point(188, 97);
             this.labelEdad.Name = "labelEdad";
-            this.labelEdad.Size = new System.Drawing.Size(109, 16);
+            this.labelEdad.Size = new System.Drawing.Size(90, 13);
             this.labelEdad.TabIndex = 5;
             this.labelEdad.Text = "Ingresa tu CURP:";
             // 
             // textBoxEdad
             // 
-            this.textBoxEdad.Location = new System.Drawing.Point(379, 116);
-            this.textBoxEdad.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEdad.Location = new System.Drawing.Point(284, 94);
             this.textBoxEdad.Name = "textBoxEdad";
-            this.textBoxEdad.Size = new System.Drawing.Size(260, 22);
+            this.textBoxEdad.Size = new System.Drawing.Size(196, 20);
             this.textBoxEdad.TabIndex = 6;
             // 
             // labelCodigo
             // 
             this.labelCodigo.AutoSize = true;
             this.labelCodigo.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelCodigo.Location = new System.Drawing.Point(255, 176);
-            this.labelCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCodigo.Location = new System.Drawing.Point(191, 143);
             this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(154, 16);
+            this.labelCodigo.Size = new System.Drawing.Size(122, 13);
             this.labelCodigo.TabIndex = 7;
             this.labelCodigo.Text = "Código de Confirmación:";
             // 
             // textBoxCodigo
             // 
-            this.textBoxCodigo.Location = new System.Drawing.Point(452, 170);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCodigo.Location = new System.Drawing.Point(339, 138);
             this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(132, 22);
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
             this.textBoxCodigo.TabIndex = 8;
             // 
             // btnValidarSolicitud
             // 
-            this.btnValidarSolicitud.Location = new System.Drawing.Point(259, 279);
-            this.btnValidarSolicitud.Margin = new System.Windows.Forms.Padding(4);
+            this.btnValidarSolicitud.Location = new System.Drawing.Point(194, 227);
             this.btnValidarSolicitud.Name = "btnValidarSolicitud";
-            this.btnValidarSolicitud.Size = new System.Drawing.Size(143, 28);
+            this.btnValidarSolicitud.Size = new System.Drawing.Size(107, 23);
             this.btnValidarSolicitud.TabIndex = 9;
             this.btnValidarSolicitud.Text = "Validar Solicitud";
             this.btnValidarSolicitud.UseVisualStyleBackColor = true;
@@ -253,10 +231,9 @@
             // 
             this.labelFechaHora.AutoSize = true;
             this.labelFechaHora.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelFechaHora.Location = new System.Drawing.Point(255, 375);
-            this.labelFechaHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFechaHora.Location = new System.Drawing.Point(189, 96);
             this.labelFechaHora.Name = "labelFechaHora";
-            this.labelFechaHora.Size = new System.Drawing.Size(233, 16);
+            this.labelFechaHora.Size = new System.Drawing.Size(185, 13);
             this.labelFechaHora.TabIndex = 11;
             this.labelFechaHora.Text = "Selecciona la fecha y hora de llegada";
             // 
@@ -264,49 +241,44 @@
             // 
             this.dateTimePickerReserva.CustomFormat = "yyyy-MM-dd HH:mm";
             this.dateTimePickerReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerReserva.Location = new System.Drawing.Point(259, 411);
-            this.dateTimePickerReserva.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerReserva.Location = new System.Drawing.Point(192, 125);
             this.dateTimePickerReserva.Name = "dateTimePickerReserva";
-            this.dateTimePickerReserva.Size = new System.Drawing.Size(283, 22);
+            this.dateTimePickerReserva.Size = new System.Drawing.Size(213, 20);
             this.dateTimePickerReserva.TabIndex = 12;
             // 
             // labelLugar
             // 
             this.labelLugar.AutoSize = true;
             this.labelLugar.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelLugar.Location = new System.Drawing.Point(255, 460);
-            this.labelLugar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLugar.Location = new System.Drawing.Point(189, 165);
             this.labelLugar.Name = "labelLugar";
-            this.labelLugar.Size = new System.Drawing.Size(242, 16);
+            this.labelLugar.Size = new System.Drawing.Size(193, 13);
             this.labelLugar.TabIndex = 13;
             this.labelLugar.Text = "Selecciona tu lugar de estacionamiento";
             // 
             // comboBoxLugar
             // 
             this.comboBoxLugar.FormattingEnabled = true;
-            this.comboBoxLugar.Location = new System.Drawing.Point(259, 496);
-            this.comboBoxLugar.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxLugar.Location = new System.Drawing.Point(192, 194);
             this.comboBoxLugar.Name = "comboBoxLugar";
-            this.comboBoxLugar.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxLugar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLugar.TabIndex = 14;
             // 
             // btnEnviarCodigo
             // 
-            this.btnEnviarCodigo.Location = new System.Drawing.Point(553, 460);
-            this.btnEnviarCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEnviarCodigo.Location = new System.Drawing.Point(413, 165);
             this.btnEnviarCodigo.Name = "btnEnviarCodigo";
-            this.btnEnviarCodigo.Size = new System.Drawing.Size(161, 43);
+            this.btnEnviarCodigo.Size = new System.Drawing.Size(121, 35);
             this.btnEnviarCodigo.TabIndex = 15;
-            this.btnEnviarCodigo.Text = "Enviar código de confirmación";
+            this.btnEnviarCodigo.Text = "Guardar Reserva";
             this.btnEnviarCodigo.UseVisualStyleBackColor = true;
             this.btnEnviarCodigo.Click += new System.EventHandler(this.btnEnviarCodigo_Click);
             // 
             // Validar
             // 
-            this.Validar.Location = new System.Drawing.Point(436, 279);
-            this.Validar.Margin = new System.Windows.Forms.Padding(4);
+            this.Validar.Location = new System.Drawing.Point(327, 227);
             this.Validar.Name = "Validar";
-            this.Validar.Size = new System.Drawing.Size(100, 28);
+            this.Validar.Size = new System.Drawing.Size(75, 23);
             this.Validar.TabIndex = 16;
             this.Validar.Text = "Validar";
             this.Validar.UseVisualStyleBackColor = true;
@@ -316,29 +288,26 @@
             // 
             this.lbltelefono.AutoSize = true;
             this.lbltelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbltelefono.Location = new System.Drawing.Point(276, 217);
-            this.lbltelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltelefono.Location = new System.Drawing.Point(207, 176);
             this.lbltelefono.Name = "lbltelefono";
-            this.lbltelefono.Size = new System.Drawing.Size(61, 16);
+            this.lbltelefono.Size = new System.Drawing.Size(49, 13);
             this.lbltelefono.TabIndex = 19;
             this.lbltelefono.Text = "Telefono";
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(452, 213);
-            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTelefono.Location = new System.Drawing.Point(339, 173);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(132, 22);
+            this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
             this.textBoxTelefono.TabIndex = 20;
             // 
             // lbltime
             // 
             this.lbltime.AutoSize = true;
             this.lbltime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbltime.Location = new System.Drawing.Point(611, 196);
-            this.lbltime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltime.Location = new System.Drawing.Point(458, 159);
             this.lbltime.Name = "lbltime";
-            this.lbltime.Size = new System.Drawing.Size(0, 16);
+            this.lbltime.Size = new System.Drawing.Size(0, 13);
             this.lbltime.TabIndex = 21;
             // 
             // timer1
@@ -348,10 +317,10 @@
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(781, 554);
+            this.ClientSize = new System.Drawing.Size(586, 450);
             this.Controls.Add(this.lbltime);
             this.Controls.Add(this.textBoxTelefono);
             this.Controls.Add(this.lbltelefono);
@@ -372,9 +341,9 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Park Amigo";
+            this.Load += new System.EventHandler(this.Form3_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -397,8 +366,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.Label labelEdad;
         private System.Windows.Forms.TextBox textBoxEdad;
         private System.Windows.Forms.Label labelCodigo;
