@@ -21,7 +21,45 @@ namespace Estacionamiento_V2._0
             InitializeComponent();
             button2.Visible = false;
             button3.Visible = false;
+            linkLabel1.Visible = false;
+            textBox1.Text = "Ingrese su usuario";
+            textBox1.ForeColor = Color.Black;
+            textBox1.Enter += textBox_Enter;
+            textBox1.Leave += textBox_Leave;
+            label4.Visible = false;
+            label5.Visible = false;
         }
+
+        private void textBox_Enter(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if (txt != null)
+            {
+                if (txt.Text == "Ingrese su usuario")
+                {
+                    txt.Text = "";
+                    txt.ForeColor = Color.Black;
+
+                }
+            }
+        }
+
+        private void textBox_Leave(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if (txt != null)
+            {
+                if (string.IsNullOrWhiteSpace(txt.Text))
+                {
+                    if (txt == textBox1)
+                    {
+                        txt.Text = "Ingrese su usuario";
+                    }
+                    txt.ForeColor = Color.White;
+                }
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -30,19 +68,12 @@ namespace Estacionamiento_V2._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usua = textBox1.Text;
+            string usua = textBox1.Text.Trim();
+            string contra = textBox2.Text.Trim();
 
             if (string.IsNullOrEmpty(usua))
             {
-                MessageBox.Show("Por Favor, Ingresa un nombre de usuario");
-                return;
-            }
-
-            string contra = textBox2.Text;
-
-            if (string.IsNullOrEmpty(contra))
-            {
-                MessageBox.Show("Por Favor, Ingresa una contraseña");
+                MessageBox.Show("Por favor, ingresa un nombre de usuario o si eres Administrador podras ingresar tu Numero de Tarjeta.");
                 return;
             }
 
@@ -50,18 +81,17 @@ namespace Estacionamiento_V2._0
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 cn.Open();
-                // Primero verificamos si es un administrador
-                string adminQuery = "SELECT COUNT(*) FROM Administrador WHERE NombreDeAdministrador = @Nombre AND Contraseña = @Contra";
-                using (SqlCommand adminCmd = new SqlCommand(adminQuery, cn))
-                {
-                    adminCmd.Parameters.AddWithValue("@Nombre", usua);
-                    adminCmd.Parameters.AddWithValue("@Contra", contra);
 
-                    int adminCount = (int)adminCmd.ExecuteScalar();
-                    if (adminCount > 0)
+                
+                string tarjetaQuery = "SELECT COUNT(*) FROM Administrador WHERE Tarjeta = @Tarjeta";
+                using (SqlCommand tarjetaCmd = new SqlCommand(tarjetaQuery, cn))
+                {
+                    tarjetaCmd.Parameters.AddWithValue("@Tarjeta", usua);
+
+                    int tarjetaCount = (int)tarjetaCmd.ExecuteScalar();
+                    if (tarjetaCount > 0)
                     {
-                        // Si el administrador existe, redirigimos a Form5
-                        MessageBox.Show("Inicio de sesión de administrador exitoso.");
+                        MessageBox.Show("Inicio de sesión con tarjeta exitoso.");
                         textBox1.Text = "";
                         textBox2.Text = "";
                         textBox1.Focus();
@@ -73,47 +103,81 @@ namespace Estacionamiento_V2._0
                     }
                 }
 
-                // Si no es un administrador, verificamos si es un usuario regular
-                string query = "SELECT COUNT(*) FROM [Registro-usuario] WHERE Nombre_de_usuario = @Nombre AND Contraseña = @Contra";
-                using (SqlCommand cmd = new SqlCommand(query, cn))
+                
+                if (!string.IsNullOrEmpty(contra))
                 {
-                    cmd.Parameters.AddWithValue("@Nombre", usua);
-                    cmd.Parameters.AddWithValue("@Contra", contra);
-
-                    int count = (int)cmd.ExecuteScalar();
-                    if (count > 0)
+                    string adminQuery = "SELECT COUNT(*) FROM Administrador WHERE NombreDeAdministrador = @Nombre AND Contraseña = @Contra";
+                    using (SqlCommand adminCmd = new SqlCommand(adminQuery, cn))
                     {
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        textBox1.Focus();
+                        adminCmd.Parameters.AddWithValue("@Nombre", usua);
+                        adminCmd.Parameters.AddWithValue("@Contra", contra);
 
-                        Form3 form3 = new Form3(usua);
-                        form3.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        // Si el usuario no existe o la contraseña es incorrecta
-                        string userExistsQuery = "SELECT COUNT(*) FROM [Registro-usuario] WHERE Nombre_de_usuario = @Nombre";
-                        using (SqlCommand userCmd = new SqlCommand(userExistsQuery, cn))
+                        int adminCount = (int)adminCmd.ExecuteScalar();
+                        if (adminCount > 0)
                         {
-                            userCmd.Parameters.AddWithValue("@Nombre", usua);
-                            int userExists = (int)userCmd.ExecuteScalar();
+                            MessageBox.Show("Inicio de sesión de administrador exitoso.");
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                            textBox1.Focus();
 
-                            if (userExists > 0)
+                            Form5 form5 = new Form5();
+                            form5.Show();
+                            this.Hide();
+                            return;
+                        }
+                    }
+                }
+
+                
+                if (!string.IsNullOrEmpty(contra))
+                {
+                    string query = "SELECT COUNT(*) FROM [Registro_Usuario] WHERE Nombre_de_usuario = @Nombre AND Contraseña = @Contra";
+                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", usua);
+                        cmd.Parameters.AddWithValue("@Contra", contra);
+
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Inicio de sesión exitoso.");
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                            textBox1.Focus();
+
+                            Form3 form3 = new Form3(usua);
+                            form3.Show();
+                            this.Hide();
+                            return;
+                        }
+                        else
+                        {
+                            string userExistsQuery = "SELECT COUNT(*) FROM [Registro_Usuario] WHERE Nombre_de_usuario = @Nombre";
+                            using (SqlCommand userCmd = new SqlCommand(userExistsQuery, cn))
                             {
-                                MessageBox.Show("Contraseña incorrecta.");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Usuario no registrado.");
+                                userCmd.Parameters.AddWithValue("@Nombre", usua);
+                                int userExists = (int)userCmd.ExecuteScalar();
+
+                                if (userExists > 0)
+                                {
+                                    MessageBox.Show("Contraseña incorrecta.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Usuario no registrado.");
+                                }
                             }
                         }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Por favor, ingresa una contraseña.");
+                }
             }
         }
+    
+            
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -127,10 +191,10 @@ namespace Estacionamiento_V2._0
             
             Form3 form3 = new Form3();
 
-            // Mostrar Formulario3
+           
             form3.Show();
 
-            // Ocultar Formulario1 (opcional)
+            
             this.Hide();
         }
 
@@ -138,11 +202,21 @@ namespace Estacionamiento_V2._0
         {
             Form5 form5 = new Form5();
 
-            // Mostrar Formulario3
+            
             form5.Show();
 
-            // Ocultar Formulario1 (opcional)
+            
             this.Hide();
         }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-    }
+}

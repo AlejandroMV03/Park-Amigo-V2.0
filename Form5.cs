@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;  // Usar SqlClient para SQL Server
+using System.Data.SqlClient;  
 
 namespace Estacionamiento_V2._0
 {
     public partial class Form5 : Form
     {
-        // Cadena de conexión para SQL Server
+         //Conecta la base Mex
         private string conexionString = "Data Source=NEWTONDREAM\\SQLEXPRESS;Initial Catalog=Estacionamiento;Integrated Security=True;TrustServerCertificate=True";
 
         public int TarifaPorHora { get; private set; } = 30;
@@ -33,6 +33,7 @@ namespace Estacionamiento_V2._0
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             lblreservaciones.Visible = true;
+            button4.Visible = false;
             btnreservacionesencurso.Visible = true;
             lblId.Visible = false;
             txtId.Visible = false;
@@ -52,6 +53,7 @@ namespace Estacionamiento_V2._0
             dataGridView3.Visible = false;
             button3.Visible = false;
             dataGridView2.Visible = false;
+            txtbuscarusuario.Visible=false;
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -64,7 +66,8 @@ namespace Estacionamiento_V2._0
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             lblId.Visible = true;
-            txtId.Visible = true;
+       
+           txtId.Visible = true;
             dataGridView1.Visible = false;
             lblreservaciones.Visible = false;
             btnreservacionesencurso.Visible = false;
@@ -85,6 +88,8 @@ namespace Estacionamiento_V2._0
             dataGridView3.Visible = false;
             button2.Visible = false;
             button3.Visible = false;
+            button4.Visible = false;
+            button4.Visible = true;
 
         }
 
@@ -113,6 +118,7 @@ namespace Estacionamiento_V2._0
             dataGridView3.Visible = false;
             button2.Visible = false;
             button3.Visible = false;
+            button4.Visible = false;
         }
 
 
@@ -131,7 +137,7 @@ namespace Estacionamiento_V2._0
                 try
                 {
                     conexion.Open();
-                    string query = "SELECT [ID], [ID_Usuario], [NumeroTarjeta], [Credito] FROM Tarjetas WHERE [NumeroTarjeta] = @numero";
+                    string query = "SELECT [ID_Tarjetas], [FK_Registro], [Numero_Tarjeta], [Credito] FROM Tarjetas WHERE [Numero_Tarjeta] = @numero";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexion))
                     {
@@ -141,14 +147,22 @@ namespace Estacionamiento_V2._0
                         DataTable tabla = new DataTable();
                         adapter.Fill(tabla);
 
-                        // Mostrar los resultados en el DataGridView2
-                        dataGridView2.DataSource = tabla;
-
-                        // Permitir la edición de celdas
-                        dataGridView2.ReadOnly = false;
-                        foreach (DataGridViewColumn col in dataGridView2.Columns)
+                        
+                        if (tabla.Rows.Count == 0)
                         {
-                            col.ReadOnly = false;
+                            MessageBox.Show("Esta tarjeta no pertenece al estacionamiento.", "Tarjeta no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dataGridView2.DataSource = null; 
+                        }
+                        else
+                        {
+                            dataGridView2.DataSource = tabla;
+
+                            
+                            dataGridView2.ReadOnly = false;
+                            foreach (DataGridViewColumn col in dataGridView2.Columns)
+                            {
+                                col.ReadOnly = false;
+                            }
                         }
                     }
                 }
@@ -161,17 +175,17 @@ namespace Estacionamiento_V2._0
 
         private void BuscarTarjeta(int idCliente)
         {
-            using (SqlConnection conexion = new SqlConnection(conexionString)) // Cambiado a SqlConnection
+            using (SqlConnection conexion = new SqlConnection(conexionString)) 
             {
                 try
                 {
                     conexion.Open();
                     string query = "SELECT id, nombre, numero, email FROM tarjetas WHERE id = @id";
 
-                    using (SqlCommand cmd = new SqlCommand(query, conexion)) // Cambiado a SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(query, conexion))
                     {
                         cmd.Parameters.AddWithValue("@id", idCliente);
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd); // Cambiado a SqlDataAdapter
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd); 
                         DataTable tabla = new DataTable();
                         adapter.Fill(tabla);
                         dataGridView1.DataSource = tabla;
@@ -196,7 +210,7 @@ namespace Estacionamiento_V2._0
                 try
                 {
                     conexion.Open();
-                    string query = "SELECT IdReserva, NombreUsuario, FechaReserva, HoraReserva, Lugar, Estatus FROM Reservas";
+                    string query = "SELECT ID_Reservas AS ID_Reservas, NombreUsuario, FechaReserva, HoraReserva, Lugar, Estatus FROM Reservas";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
                     DataTable tabla = new DataTable();
                     adapter.Fill(tabla);
@@ -212,6 +226,7 @@ namespace Estacionamiento_V2._0
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             lblreservaciones.Visible = false;
+            button4.Visible = false;
             btnreservacionesencurso.Visible = false;
             lblId.Visible = false;
             txtId.Visible = false;
@@ -231,27 +246,32 @@ namespace Estacionamiento_V2._0
             dataGridView3.Visible = true;
             button2.Visible = true;
             button3.Visible = true;
+            button1.Visible = false;
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             lblreservaciones.Visible = false;
+            button4.Visible = false;
             btnreservacionesencurso.Visible = false;
             lblId.Visible = false;
             txtId.Visible = false;
             dataGridView1.Visible = false;
             btnbuscar.Visible = false;
-            comboBox1.Visible = true;
-            checkBox1.Visible = true;
-            lbltarifa.Visible = true;
-            label2.Visible = true;
-            label3.Visible = true;
-            btnconfig.Visible = true;
-            numericUpDown1.Visible = true;
+            comboBox1.Visible = false;
+            checkBox1.Visible = false;
+            lbltarifa.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            btnconfig.Visible = false;
+            numericUpDown1.Visible = false;
             label4.Visible = false;
             txtbuscarusuario.Visible = false;
             linkLabel1.Visible = false;
             btnlimpiar.Visible = false;
+            Form6 form6 = new Form6();
+            form6.Show();
+            
         }
 
         private void btnconfig_Click(object sender, EventArgs e)
@@ -267,42 +287,44 @@ namespace Estacionamiento_V2._0
         {
             Form2 form2 = new Form2();
             form2.Show();
-            this.Hide();
+            
         }
 
         private void bntlimpiar_Click(object sender, EventArgs e)
         {
             try
             {
-                // Guardar cambios en el estado
                 using (SqlConnection conexion = new SqlConnection(conexionString))
                 {
                     conexion.Open();
+
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        // Verificar si el estatus está marcado como "Finalizado"
-                        if (row.Cells["Estatus"].Value != null && row.Cells["Estatus"].Value.ToString() == "Finalizada")
-                        {
-                            // Obtener el ID de la reserva (usando IdReserva como nombre de columna)
-                            int idReserva = Convert.ToInt32(row.Cells["IdReserva"].Value);
+                        if (row.IsNewRow) continue;
 
-                            // Eliminar la reserva finalizada
-                            string deleteQuery = "DELETE FROM Reservas WHERE IdReserva = @IdReserva";
-                            using (SqlCommand cmd = new SqlCommand(deleteQuery, conexion))
+                        if (row.Cells["Estatus"].Value != null)
+                        {
+                            string nuevoEstatus = row.Cells["Estatus"].Value.ToString();
+                            int idReserva = Convert.ToInt32(row.Cells["ID_Reservas"].Value);
+
+                            string updateQuery = "UPDATE Reservas SET Estatus = @estatus WHERE ID_Reservas = @idReserva";
+
+                            using (SqlCommand cmd = new SqlCommand(updateQuery, conexion))
                             {
-                                cmd.Parameters.AddWithValue("@IdReserva", idReserva);
+                                cmd.Parameters.AddWithValue("@estatus", nuevoEstatus);
+                                cmd.Parameters.AddWithValue("@idReserva", idReserva);
                                 cmd.ExecuteNonQuery();
                             }
                         }
                     }
                 }
 
-                // Recargar las reservaciones actualizadas
-                CargarReservacionesEnCurso(); // Aquí se usa el método adecuado
+                CargarReservacionesEnCurso(); 
+                MessageBox.Show("Los estatus se han actualizado correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar las reservaciones finalizadas: " + ex.Message);
+                MessageBox.Show("Error al actualizar los estatus: " + ex.Message);
             }
         }
 
@@ -316,7 +338,7 @@ namespace Estacionamiento_V2._0
 
                     foreach (DataGridViewRow row in dataGridView2.Rows)
                     {
-                        // Verificar si la celda de Crédito ha sido modificada
+                        
                         if (row.Cells["Credito"].Value != null)
                         {
                             decimal creditoNuevo;
@@ -324,14 +346,14 @@ namespace Estacionamiento_V2._0
 
                             if (esCreditoValido)
                             {
-                                int idTarjeta = Convert.ToInt32(row.Cells["ID"].Value); // Usamos la columna ID
+                                int idTarjeta = Convert.ToInt32(row.Cells["ID_Tarjetas"].Value); 
 
-                                // Actualizar el valor del crédito en la base de datos
-                                string updateQuery = "UPDATE Tarjetas SET [Credito] = @credito WHERE [ID] = @id";
+                                
+                                string updateQuery = "UPDATE Tarjetas SET [Credito] = @credito WHERE [ID_Tarjetas] = @id_Tarjetas";
                                 using (SqlCommand cmd = new SqlCommand(updateQuery, conexion))
                                 {
                                     cmd.Parameters.AddWithValue("@credito", creditoNuevo);
-                                    cmd.Parameters.AddWithValue("@id", idTarjeta);
+                                    cmd.Parameters.AddWithValue("@id_Tarjetas", idTarjeta);
                                     cmd.ExecuteNonQuery();
                                 }
                             }
@@ -354,7 +376,6 @@ namespace Estacionamiento_V2._0
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Verificar si el campo de búsqueda no está vacío
             if (string.IsNullOrEmpty(txtbuscarusuario.Text))
             {
                 MessageBox.Show("Por favor, ingrese el nombre de usuario para buscar.");
@@ -363,14 +384,25 @@ namespace Estacionamiento_V2._0
 
             string nombreUsuario = txtbuscarusuario.Text.Trim();
 
-            // Realizar la búsqueda en la base de datos
             using (SqlConnection conexion = new SqlConnection(conexionString))
             {
                 try
                 {
                     conexion.Open();
-                    // Query para buscar al usuario por nombre de usuario
-                    string query = "SELECT [Nombre], [Apellido], [Nombre_de_usuario], [Contraseña], [Numero_de_celular] FROM [Registro-usuario] WHERE [Nombre_de_usuario] = @nombreUsuario";
+
+                    
+                    string query = @"
+                SELECT 
+                    RU.ID_Registro,
+                    RU.Nombre,
+                    RU.Apellido,
+                    RU.Nombre_de_usuario,
+                    RU.Contraseña,
+                    RU.Numero_de_celular,
+                    T.Numero_Tarjeta
+                FROM Registro_Usuario RU
+                LEFT JOIN Tarjetas T ON RU.ID_Registro = T.FK_Registro
+                WHERE RU.Nombre_de_usuario = @nombreUsuario";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexion))
                     {
@@ -380,10 +412,8 @@ namespace Estacionamiento_V2._0
                         DataTable tabla = new DataTable();
                         adapter.Fill(tabla);
 
-                        // Verificar si se encontraron resultados
                         if (tabla.Rows.Count > 0)
                         {
-                            // Mostrar los resultados en el DataGridView3
                             dataGridView3.DataSource = tabla;
                         }
                         else
@@ -415,13 +445,11 @@ namespace Estacionamiento_V2._0
 
                     foreach (DataGridViewRow row in dataGridView3.Rows)
                     {
-                        if (row.Cells["ID"].Value != null)
+                        if (row.IsNewRow) continue;
+
+                        if (row.Cells["ID_Registro"].Value != null)
                         {
-                            int idUsuario;
-                            if (!int.TryParse(row.Cells["ID"].Value.ToString(), out idUsuario))
-                            {
-                                continue; // Si no se puede convertir, salta a la siguiente fila
-                            }
+                            int idRegistro = Convert.ToInt32(row.Cells["ID_Registro"].Value);
 
                             string nuevoNombre = row.Cells["Nombre"].Value?.ToString() ?? "";
                             string nuevoApellido = row.Cells["Apellido"].Value?.ToString() ?? "";
@@ -429,13 +457,17 @@ namespace Estacionamiento_V2._0
                             string nuevaContraseña = row.Cells["Contraseña"].Value?.ToString() ?? "";
                             string nuevoCelular = row.Cells["Numero_de_celular"].Value?.ToString() ?? "";
 
-                            string updateQuery = "UPDATE [Registro-usuario] SET " +
+                            
+                            string nuevoNumeroTarjeta = row.Cells["Numero_Tarjeta"].Value?.ToString() ?? "";
+
+                            
+                            string updateQuery = "UPDATE [Registro_Usuario] SET " +
                                                  "[Nombre] = @nuevoNombre, " +
                                                  "[Apellido] = @nuevoApellido, " +
                                                  "[Nombre_de_usuario] = @nuevoUsuario, " +
                                                  "[Contraseña] = @nuevaContraseña, " +
                                                  "[Numero_de_celular] = @nuevoCelular " +
-                                                 "WHERE [ID] = @idUsuario";
+                                                 "WHERE [ID_Registro] = @idRegistro";
 
                             using (SqlCommand cmd = new SqlCommand(updateQuery, conexion))
                             {
@@ -444,8 +476,43 @@ namespace Estacionamiento_V2._0
                                 cmd.Parameters.AddWithValue("@nuevoUsuario", nuevoUsuario);
                                 cmd.Parameters.AddWithValue("@nuevaContraseña", nuevaContraseña);
                                 cmd.Parameters.AddWithValue("@nuevoCelular", nuevoCelular);
-                                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                                cmd.Parameters.AddWithValue("@idRegistro", idRegistro);
+
                                 cmd.ExecuteNonQuery();
+                            }
+
+                            if (!string.IsNullOrEmpty(nuevoNumeroTarjeta))
+                            {
+                                
+                                string checkTarjetaQuery = "SELECT COUNT(*) FROM Tarjetas WHERE FK_Registro = @idRegistro";
+                                using (SqlCommand checkCmd = new SqlCommand(checkTarjetaQuery, conexion))
+                                {
+                                    checkCmd.Parameters.AddWithValue("@idRegistro", idRegistro);
+                                    int count = (int)checkCmd.ExecuteScalar();
+
+                                    if (count > 0)
+                                    {
+                                        
+                                        string updateTarjetaQuery = "UPDATE Tarjetas SET Numero_Tarjeta = @numeroTarjeta WHERE FK_Registro = @idRegistro";
+                                        using (SqlCommand updateTarjetaCmd = new SqlCommand(updateTarjetaQuery, conexion))
+                                        {
+                                            updateTarjetaCmd.Parameters.AddWithValue("@numeroTarjeta", nuevoNumeroTarjeta);
+                                            updateTarjetaCmd.Parameters.AddWithValue("@idRegistro", idRegistro);
+                                            updateTarjetaCmd.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        
+                                        string insertTarjetaQuery = "INSERT INTO Tarjetas (FK_Registro, Numero_Tarjeta, Credito) VALUES (@idRegistro, @numeroTarjeta, 0)";
+                                        using (SqlCommand insertTarjetaCmd = new SqlCommand(insertTarjetaQuery, conexion))
+                                        {
+                                            insertTarjetaCmd.Parameters.AddWithValue("@idRegistro", idRegistro);
+                                            insertTarjetaCmd.Parameters.AddWithValue("@numeroTarjeta", nuevoNumeroTarjeta);
+                                            insertTarjetaCmd.ExecuteNonQuery();
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -460,7 +527,7 @@ namespace Estacionamiento_V2._0
             }
         }
 
-        private void CargarDatosUsuarios()
+            private void CargarDatosUsuarios()
         {
             string nombreUsuario = txtbuscarusuario.Text.Trim();
 
@@ -469,7 +536,7 @@ namespace Estacionamiento_V2._0
                 try
                 {
                     conexion.Open();
-                    string query = "SELECT [ID], [Nombre], [Apellido], [Nombre_de_usuario], [Contraseña], [Numero_de_celular] FROM [Registro-usuario] WHERE [Nombre_de_usuario] = @nombreUsuario";
+                    string query = "SELECT [ID_Registro], [Nombre], [Apellido], [Nombre_de_usuario], [Contraseña], [Numero_de_celular] FROM [Registro_Usuario] WHERE [Nombre_de_usuario] = @nombreUsuario";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexion))
                     {
@@ -479,13 +546,13 @@ namespace Estacionamiento_V2._0
                         DataTable tabla = new DataTable();
                         adapter.Fill(tabla);
 
-                        // Asignar los datos al DataGridView
+                        
                         dataGridView3.DataSource = tabla;
 
-                        // Asegurar que la columna 'ID' está visible
-                        if (dataGridView3.Columns.Contains("ID"))
+                        
+                        if (dataGridView3.Columns.Contains("ID_Registro"))
                         {
-                            dataGridView3.Columns["ID"].Visible = true;
+                            dataGridView3.Columns["ID_Registro"].Visible = true;
                         }
                     }
                 }
@@ -495,5 +562,15 @@ namespace Estacionamiento_V2._0
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7();
+            form7.Show();
+            
+        }
     }
 }
+//Aldair Flores
+//Alejandro Mex
+//UNID 

@@ -30,7 +30,7 @@ namespace Estacionamiento_V2._0
             string connectionString = "Data Source=NEWTONDREAM\\SQLEXPRESS;Initial Catalog=Estacionamiento;Integrated Security=True;TrustServerCertificate=True";
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO [Registro-usuario] (Nombre, Apellido, Nombre_de_usuario, Contraseña, Numero_de_celular) VALUES (@Nombre, @Apellido, @Nombre_de_usuario, @Contraseña, @Numero_de_celular)";
+                string query = "INSERT INTO [Registro_Usuario] (Nombre, Apellido, Nombre_de_usuario, Contraseña, Numero_de_celular) VALUES (@Nombre, @Apellido, @Nombre_de_usuario, @Contraseña, @Numero_de_celular)";
                
                 using (SqlCommand cmd = new SqlCommand(query, cn)) 
                 {
@@ -73,6 +73,11 @@ namespace Estacionamiento_V2._0
 
                 }
             }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

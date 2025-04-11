@@ -111,14 +111,22 @@ C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\K4os.Compression.LZ
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Bcl.Memory.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Bcl.TimeProvider.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\MySql.Data.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\MySqlConnector.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\RestSharp.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Buffers.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.IO.Pipelines.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Memory.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Numerics.Vectors.dll
@@ -127,6 +135,7 @@ C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Text.Encodin
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Text.Json.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.ValueTuple.dll
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Twilio.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\ZstdSharp.dll
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Google.Protobuf.pdb
@@ -135,14 +144,22 @@ C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\K4os.Compression.LZ
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Bcl.Memory.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Bcl.TimeProvider.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\MySql.Data.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\MySqlConnector.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\RestSharp.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Buffers.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.IO.Pipelines.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Memory.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Numerics.Vectors.xml
@@ -151,12 +168,14 @@ C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Text.Encodin
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Text.Json.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\System.ValueTuple.xml
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\bin\Debug\Twilio.xml
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento V2.0.csproj.AssemblyReference.cache
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form1.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form2.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form3.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form4.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form5.resources
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form6.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Properties.Resources.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form4.aa-ER.resources
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento V2.0.csproj.GenerateResource.cache
@@ -165,3 +184,4 @@ C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\aa-ER\Estacionamien
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacion.9479B9EA.Up2Date
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento V2.0.exe
 C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento V2.0.pdb
+C:\Users\Cristian Mex\Source\Repos\Park-Amigo-V2.0\obj\Debug\Estacionamiento_V2._0.Form7.resources

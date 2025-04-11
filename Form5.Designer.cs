@@ -31,9 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +67,7 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,9 +84,17 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
+            this.toolStripSeparator2,
+            this.toolStripSeparator1,
             this.toolStripButton2,
+            this.toolStripSeparator4,
+            this.toolStripSeparator3,
             this.toolStripButton3,
+            this.toolStripSeparator6,
+            this.toolStripSeparator5,
             this.toolStripButton4,
+            this.toolStripSeparator7,
+            this.toolStripSeparator8,
             this.toolStripButton5});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -95,6 +112,16 @@
             this.toolStripButton1.Text = "Reservaciones";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(137, 6);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
@@ -103,6 +130,16 @@
             this.toolStripButton2.Size = new System.Drawing.Size(137, 24);
             this.toolStripButton2.Text = "Tarjetas NFC";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(137, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
             // 
             // toolStripButton3
             // 
@@ -113,14 +150,34 @@
             this.toolStripButton3.Text = "Informacion clientes";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(137, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(137, 6);
+            // 
             // toolStripButton4
             // 
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(137, 24);
-            this.toolStripButton4.Text = "Configuración";
+            this.toolStripButton4.Text = "Estacionamiento";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(137, 6);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(137, 6);
             // 
             // toolStripButton5
             // 
@@ -193,7 +250,7 @@
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnbuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnbuscar.Location = new System.Drawing.Point(374, 324);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(64, 21);
             this.btnbuscar.TabIndex = 10;
@@ -207,7 +264,7 @@
             this.btnreservacionesencurso.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnreservacionesencurso.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnreservacionesencurso.Location = new System.Drawing.Point(364, 100);
-            this.btnreservacionesencurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnreservacionesencurso.Margin = new System.Windows.Forms.Padding(2);
             this.btnreservacionesencurso.Name = "btnreservacionesencurso";
             this.btnreservacionesencurso.Size = new System.Drawing.Size(79, 20);
             this.btnreservacionesencurso.TabIndex = 11;
@@ -218,7 +275,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(264, 90);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(90, 20);
             this.numericUpDown1.TabIndex = 12;
@@ -237,7 +294,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(555, 87);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 14;
@@ -258,7 +315,7 @@
             this.btnconfig.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnconfig.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnconfig.Location = new System.Drawing.Point(364, 173);
-            this.btnconfig.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnconfig.Margin = new System.Windows.Forms.Padding(2);
             this.btnconfig.Name = "btnconfig";
             this.btnconfig.Size = new System.Drawing.Size(79, 20);
             this.btnconfig.TabIndex = 16;
@@ -270,7 +327,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(230, 136);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 17;
@@ -322,7 +379,7 @@
             this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnlimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnlimpiar.Location = new System.Drawing.Point(526, 324);
-            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(64, 21);
             this.btnlimpiar.TabIndex = 22;
@@ -381,12 +438,23 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(496, 114);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(134, 23);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Solicitudes pendientes";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(672, 366);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView3);
@@ -412,9 +480,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form5";
-            this.Text = "ParkAmigo";
+            this.Text = "Park Amigo V2.0";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -460,5 +529,14 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.Button button4;
     }
 }

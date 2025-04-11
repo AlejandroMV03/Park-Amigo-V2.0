@@ -43,6 +43,9 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.labelEdad = new System.Windows.Forms.Label();
             this.textBoxEdad = new System.Windows.Forms.TextBox();
@@ -59,6 +62,7 @@
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.lbltime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +70,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gold;
-            this.pictureBox1.Location = new System.Drawing.Point(194, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(170, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(420, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(444, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -107,6 +111,9 @@
             this.toolStripButton3,
             this.toolStripSeparator5,
             this.toolStripSeparator6,
+            this.toolStripButton4,
+            this.toolStripSeparator7,
+            this.toolStripSeparator1,
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -172,6 +179,25 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(164, 6);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(164, 24);
+            this.toolStripButton4.Text = "Historial";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(164, 6);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
             // 
             // toolStripButton5
             // 
@@ -315,12 +341,24 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(191, 94);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(375, 245);
+            this.listView1.TabIndex = 22;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(586, 450);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.lbltime);
             this.Controls.Add(this.textBoxTelefono);
             this.Controls.Add(this.lbltelefono);
@@ -341,8 +379,9 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
-            this.Text = "Park Amigo";
+            this.Text = "Park Amigo V2.0";
             this.Load += new System.EventHandler(this.Form3_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -383,5 +422,9 @@
         private System.Windows.Forms.TextBox textBoxTelefono;
         private System.Windows.Forms.Label lbltime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ListView listView1;
     }
 }

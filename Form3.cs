@@ -2,7 +2,10 @@
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows.Forms;
-
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.TwiML.Voice;
+using Twilio.Types;
 namespace Estacionamiento_V2._0
 {
     public partial class Form3 : Form
@@ -10,14 +13,16 @@ namespace Estacionamiento_V2._0
 
 
         private Timer timer;
-        private int tiempoRestante = 120;  // 2 minutos en segundos
-        private int codigoGenerado; // Código generado
+        private int tiempoRestante = 120;
+        private int codigoGenerado;
         private DateTime tiempoGeneracion;
         private string fechaReserva;
         private string horaReserva;
         private string lugarReserva;
-      
-        private string numeroAdmi = "529831682479"; // Número del administrador (reemplaza con el número real)
+        private string accountSid = "AC522e92d95e9904f9cfc973922529735c";
+        private string twilioAuthToken = "b335e0e850816e64046f7d8657cb555a";
+        private string twilioNumber = "+19472186624";
+
 
 
 
@@ -35,16 +40,20 @@ namespace Estacionamiento_V2._0
 
         {
             timer1 = new Timer();
-            timer1.Interval = 1000; // 1 segundo
-         
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick_1;
+
 
             textBoxCodigo.Visible = true;
             btnValidarSolicitud.Visible = false;
             lbltelefono.Visible = true;
             textBoxTelefono.Visible = true;
+           
 
-          
+
         }
+        private string nombreUsuarioActual;
+
         public Form3(string usuario)
         {
             InitializeComponent();
@@ -57,12 +66,13 @@ namespace Estacionamiento_V2._0
             labelCodigo.Visible = true;
             textBoxCodigo.Visible = true;
             btnValidarSolicitud.Visible = false;
-            
+
             labelFechaHora.Visible = true;
             dateTimePickerReserva.Visible = false;
             labelLugar.Visible = true;
             comboBoxLugar.Visible = false;
             btnEnviarCodigo.Visible = false;
+            listView1.Visible = false;
 
             comboBoxLugar.Items.AddRange(new string[]
             {
@@ -71,64 +81,90 @@ namespace Estacionamiento_V2._0
             });
         }
 
-      
+
 
         private void btnValidarCURP_Click(object sender, EventArgs e)
         {
-
-            string numeroTelefonoCliente = textBoxTelefono.Text.Trim(); // Número del cliente
+            string numeroTelefonoCliente = textBoxTelefono.Text.Trim();
 
             if (string.IsNullOrEmpty(numeroTelefonoCliente) || numeroTelefonoCliente.Length < 10)
             {
                 MessageBox.Show("Por favor ingresa un número de teléfono válido.");
                 return;
             }
-    
-            // Generar el código de acceso
+
             Random random = new Random();
-            codigoGenerado = random.Next(100000, 1000000); // Código de 6 dígitos
-            tiempoGeneracion = DateTime.Now; // Guardar el momento en que se generó el código
+            codigoGenerado = random.Next(100000, 1000000);
+            tiempoGeneracion = DateTime.Now;
 
-            // Mostrar el código en el TextBox (aunque no es necesario aquí si solo se usa para WhatsApp)
-            textBoxCodigo.Text = codigoGenerado.ToString();
+            //textBoxCodigo.Text = codigoGenerado.ToString();
 
-            // Mostrar el tiempo restante (2 minutos)
-            tiempoRestante = 120; // 2 minutos en segundos
+            tiempoRestante = 120;
             lbltime.Text = "Tiempo restante : 2:00";
-            timer1.Start(); // Iniciar el temporizador para la cuenta regresiva
+            timer1.Start();
 
-            string numeroAdmi = "529831682479"; // Debe estar en formato internacional (con código de país)
+            EnviarCodigoPorSMS(numeroTelefonoCliente, codigoGenerado);
 
-            // Crear el mensaje para enviar
-            string mensaje = $"Hola , tu código de acceso es: {codigoGenerado}";
+            
+            string nombreUsuarioActual = label1.Text.Replace("Bienvenido: ", "").Trim();
 
-            // Formatear la URL para abrir el chat con el número administrador y enviar el mensaje
-            string url = $"https://wa.me/{numeroTelefonoCliente}?text={Uri.EscapeDataString(mensaje)}";
-
-            // Abrir la URL en el navegador para enviar el mensaje por WhatsApp Web
-            Process.Start(new ProcessStartInfo
+            
+            using (SqlConnection conexion = new SqlConnection("Data Source=NEWTONDREAM\\SQLEXPRESS;Initial Catalog=Estacionamiento;Integrated Security=True;TrustServerCertificate=True"))
             {
-                FileName = url,
-                UseShellExecute = true
-            });
+                try
+                {
+                    conexion.Open();
+                    string insertQuery = "INSERT INTO Solicitudes (NombreUsuario, FechaSolicitud) VALUES (@NombreUsuario, @FechaSolicitud)";
 
-            // Limpiar el TextBox para que el usuario ingrese manualmente el código si es necesario
-            textBoxCodigo.Clear();
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, conexion))
+                    {
+                        
+                        cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuarioActual);
+                        cmd.Parameters.AddWithValue("@FechaSolicitud", DateTime.Now);
+
+                        
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Solicitud registrada correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la solicitud: " + ex.Message);
+                }
+            }
         }
-       
 
+        private void EnviarCodigoPorSMS(string numeroDestino, int codigo)
+        {
+            try
+            {
 
-      
+                TwilioClient.Init(accountSid, twilioAuthToken);
+
+                var mensaje = MessageResource.Create(
+                    from: new PhoneNumber(twilioNumber),
+                    to: new PhoneNumber("+52" + numeroDestino),
+                    body: $"Hola, tu código de acceso es: {codigo}"
+                );
+
+                MessageBox.Show("Mensaje enviado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar el mensaje: {ex.Message}");
+            }
+        }
 
         private int CalcularEdadDesdeCURP(string curp)
         {
-            // Extraer fecha de nacimiento de la CURP (posición 4 a 9: AAMMDD)
+
             string fechaNacimiento = curp.Substring(4, 6);
             int año = Convert.ToInt32(fechaNacimiento.Substring(0, 2));
             int mes = Convert.ToInt32(fechaNacimiento.Substring(2, 2));
             int dia = Convert.ToInt32(fechaNacimiento.Substring(4, 2));
 
-            // Ajustar el año para considerar siglos
+
             año += (año >= 30) ? 1900 : 2000;
 
             DateTime fechaNac = new DateTime(año, mes, dia);
@@ -137,7 +173,7 @@ namespace Estacionamiento_V2._0
 
             if (hoy < fechaNac.AddYears(edad))
             {
-                edad--; // Ajustar si aún no ha cumplido años este año
+                edad--;
             }
 
             return edad;
@@ -145,7 +181,7 @@ namespace Estacionamiento_V2._0
 
         private void btnValidarSolicitud_Click(object sender, EventArgs e)
         {
-            // Verificar si el código ya expiró
+
             if (DateTime.Now.Subtract(tiempoGeneracion).TotalSeconds > 120)
             {
                 MessageBox.Show("El código ha expirado. Se generará uno nuevo.");
@@ -153,7 +189,7 @@ namespace Estacionamiento_V2._0
                 return;
             }
 
-            // Validar el código ingresado
+
             if (int.TryParse(textBoxCodigo.Text, out int codigoIngresado) && codigoIngresado == codigoGenerado)
             {
                 MessageBox.Show("¡Código confirmado exitosamente!");
@@ -166,10 +202,10 @@ namespace Estacionamiento_V2._0
         private void GenerarNuevoCodigo()
         {
             Random random = new Random();
-            codigoGenerado = random.Next(100000, 1000000); // Nuevo código de 6 dígitos
-            tiempoGeneracion = DateTime.Now; // Registrar el nuevo tiempo de generación
-            textBoxCodigo.Text = codigoGenerado.ToString();
-            tiempoRestante = 120; // Reiniciar el temporizador a 2 minutos
+            codigoGenerado = random.Next(100000, 1000000);
+            tiempoGeneracion = DateTime.Now;
+            //textBoxCodigo.Text = codigoGenerado.ToString();
+            tiempoRestante = 120;
             lbltime.Text = "Tiempo restante: 2:00";
             timer1.Start();
 
@@ -201,6 +237,8 @@ namespace Estacionamiento_V2._0
             labelLugar.Visible = false;
             comboBoxLugar.Visible = false;
             btnEnviarCodigo.Visible = false;
+            listView1.Visible = false;
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -218,6 +256,7 @@ namespace Estacionamiento_V2._0
             btnValidarSolicitud.Visible = false;
             textBoxTelefono.Visible = false;
             lbltelefono.Visible = false;
+            listView1.Visible = false;
         }
 
         private void btnEnviarCodigo_Click(object sender, EventArgs e)
@@ -281,7 +320,10 @@ namespace Estacionamiento_V2._0
             btnEnviarCodigo.Visible = false;
             labelFechaHora.Visible = false;
             labelLugar.Visible = false;
-            
+            listView1.Visible = false;
+
+            dateTimePickerReserva.MinDate = DateTime.Today; 
+            dateTimePickerReserva.MaxDate = DateTime.Today.AddMonths(3);
 
         }
 
@@ -296,14 +338,80 @@ namespace Estacionamiento_V2._0
             btnEnviarCodigo.Visible = false;
             labelFechaHora.Visible = false;
             labelLugar.Visible = false;
+            listView1.Visible = false;
+            dateTimePickerReserva.MinDate = DateTime.Today; 
+            dateTimePickerReserva.MaxDate = DateTime.Today.AddMonths(3);
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            form1.Show();  // Muestra Form1
+            form1.Show();
             this.Close();
         }
-    }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfigurarListView1()
+        {
+            listView1.View = View.Details;
+            listView1.Columns.Clear();
+            listView1.Columns.Add("ID_Reservas", 80);
+            listView1.Columns.Add("NombreUsuario", 120);
+            listView1.Columns.Add("FechaReserva", 120);
+            listView1.Columns.Add("Lugar", 100);
+            listView1.Columns.Add("Estatus", 100);
+            listView1.Columns.Add("Numero_Tarjetas", 120);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = true;
+            ConfigurarListView1(); 
+
+            listView1.Items.Clear(); 
+
+            string usuario = label1.Text.Replace("Bienvenido: ", "").Trim();
+
+            using (SqlConnection conexion = new SqlConnection("Data Source=NEWTONDREAM\\SQLEXPRESS;Initial Catalog=Estacionamiento;Integrated Security=True;TrustServerCertificate=True"))
+            {
+                string query = "SELECT ID_Reservas, NombreUsuario, FechaReserva, Lugar, Estatus, Numero_Tarjetas FROM Reservas WHERE NombreUsuario = @usuario";
+
+                try
+                {
+                    conexion.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", usuario);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ListViewItem item = new ListViewItem(reader["ID_Reservas"].ToString());
+                                item.SubItems.Add(reader["NombreUsuario"].ToString());
+                                item.SubItems.Add(Convert.ToDateTime(reader["FechaReserva"]).ToString("yyyy-MM-dd HH:mm"));
+                                item.SubItems.Add(reader["Lugar"].ToString());
+                                item.SubItems.Add(reader["Estatus"].ToString());
+                                item.SubItems.Add(reader["Numero_Tarjetas"].ToString());
+
+                                listView1.Items.Add(item);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar datos: " + ex.Message);
+                }
+            }
+           
+        }
+
+       
+    }
+    
 }
