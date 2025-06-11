@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "828677028780",
+    "project_id": "parkamigo-742bb",
+    "storage_bucket": "parkamigo-742bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828677028780:android:3eb95865ecaa6279201809",
+        "android_client_info": {
+          "package_name": "com.example.parkamigo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv5-2325LRrthL7IMiRzBuHalKAf_Z12w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
